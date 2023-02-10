@@ -75,3 +75,14 @@ file: play.yml
     vars:
       action: apply back configuration
 ```
+
+Generates commands to negate a set of aces -
+```
+ip access-list standard 1
+no 10 permit 192.168.12.0 0.0.0.255
+ip access-list extended acl_123
+no 10 permit tcp any any eq 22
+no 21 permit tcp host 192.168.11.8 host 192.168.20.5 eq 22
+ip access-list extended test_acl
+no 10 deny tcp 192.0.2.0 0.0.0.255 192.0.3.0 0.0.0.255 eq www fin option traceroute ttl eq 10
+```

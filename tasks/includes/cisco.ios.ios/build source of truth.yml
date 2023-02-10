@@ -3,7 +3,7 @@
     state: gathered
   register: acl_rendered_data
 
-- name: Store interface config as source of truth
+- name: Store acls config as source of truth
   ansible.builtin.copy:
     content: "{{ acl_rendered_data['gathered'] | to_nice_yaml }}"
     dest: "{{ playbook_dir }}/vars/acl_sot.yml"
