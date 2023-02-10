@@ -3,7 +3,7 @@
 ## Example Playbook
 
 file: play.yml
-
+```
 - name: Ace delete role
   hosts:
     - ios
@@ -74,3 +74,4 @@ file: play.yml
     ansible.builtin.include_role: *ref_role
     vars:
       action: apply back configuration
+```
