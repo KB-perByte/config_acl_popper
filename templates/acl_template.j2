@@ -1,0 +1,7 @@
+{% for item in acl_data["rendered"] %}
+{% if "access-list" in item %}
+{{ item }}
+{% elif "access-list" not in item %}
+no {{ item }}
+{% endif %}
+{% endfor %}

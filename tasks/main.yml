@@ -1,0 +1,5 @@
+- name: Run the platform specific tasks
+  include_tasks: "{{ item }}"
+  with_first_found:
+  - "includes/{{ ansible_network_os }}/{{ action }}.yml"
+  - "includes/common/unsupported platform action.yaml"
